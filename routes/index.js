@@ -13,7 +13,7 @@ router.post('/contact', async function(req, res, next) {
   const receiver = 'contact@julien-noel.com'
   const nom = req.body.name
   const mail = req.body.email
-  const message = req.body.message+'\n'+nom+'\n '+mail+''
+  const message = `${req.body.message} \n ${nom} \n ${mail}`
   
 
   let transporter = nodemailer.createTransport({
