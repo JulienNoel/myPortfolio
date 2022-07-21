@@ -13,7 +13,19 @@ router.post('/contact', async function(req, res, next) {
   const receiver = 'contact@julien-noel.com'
   const nom = req.body.name
   const mail = req.body.email
-  const message = `${req.body.message} \n ${nom} \n ${mail}`
+  const message = req.body.message
+  const tel = req.body.tel
+
+  const outpout =  `
+                    <h3>Coordonnées Contact</h3>
+                    <ul>
+                    <li>Nom: ${nom}</li>
+                    <li>Email : ${mail}</li>
+                    <li>Tel : ${tel}</li>                                       
+                    </ul>
+                    <h3>Message : </h3>
+                    <p>${message}<p/>
+                    `
   
 
   let transporter = nodemailer.createTransport({
@@ -34,14 +46,14 @@ router.post('/contact', async function(req, res, next) {
     to: receiver, // list of receivers
     subject: `Prise de contact ${nom}`, // Subject line
     text: message, // plain text body
-    
+    html: outpout
   });
 
   console.log("Message sent: %s", info.messageId)
   
 
 
-  res.render('index',{ title: 'message envoyé' });
+  res.redirect('/');
 });
 
 module.exports = router;

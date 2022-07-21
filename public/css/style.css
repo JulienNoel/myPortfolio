@@ -67,7 +67,7 @@ img.svg{
 }
 
 i.logo{
-	font-size: 400%;
+	font-size: 350%;
 }
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
     color: #6f6f6f;
@@ -2825,4 +2825,16 @@ h6 { font-size: 16px; }
 .background {
 	background: rgb(209,217,255);
 	background: linear-gradient(45deg, rgba(209,217,255,1) 0%, rgba(110,127,209,1) 65%, rgba(20,46,181,1) 100%);
+}
+
+.submit-btn {
+	width: 250px;
+	height: 50px;
+	border-radius: 25px;
+	color: white;
+	background-color: var(--main-color);
+	border: 1px solid var(--main-color);
+	font-family: var(--font-family-main);
+	font-size: 18px;
+	font-weight: bold;
 }
