@@ -17,14 +17,24 @@ router.post('/contact', async function(req, res, next) {
   const message = req.body.message
   const tel = req.body.tel
 
-  var newUser = new userModel({
-    userName: nom,
+  const user = await userModel.findOne({
     mail: mail,
-    tel: tel, 
-    userMessage: [{message: message,}]
-  });
+  });  
   
- await newUser.save();
+  if (user) {
+    user.userMessage.push({message: message})
+    await user.save()
+  }else {
+    const newUser = new userModel({
+      userName: nom,
+      mail: mail,
+      tel: tel, 
+      userMessage: [{message: message,}]
+    });
+    
+   await newUser.save();
+  }
+  
 
   const outpout =  `
                     <h3>Coordonnées Contact</h3>
