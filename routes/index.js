@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const nodemailer = require("nodemailer");
+var userModel = require("../models/user");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -15,6 +16,15 @@ router.post('/contact', async function(req, res, next) {
   const mail = req.body.email
   const message = req.body.message
   const tel = req.body.tel
+
+  var newUser = new userModel({
+    userName: nom,
+    mail: mail,
+    tel: tel, 
+    userMessage: [{message: message,}]
+  });
+  
+ await newUser.save();
 
   const outpout =  `
                     <h3>Coordonnées Contact</h3>
