@@ -8,7 +8,7 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-<meta name="description" content="Julien Noel Portfolio developer fullstack javascript react react native nodejs mongo db">
+<meta name="description" content="Julien Noel Portfolio developer fullstack javascript react react native nodejs mongo db mes projets de developpement web et mobile">
 
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -54,6 +54,12 @@
 	src="https://www.facebook.com/tr?id=226301612281659&ev=PageView&noscript=1"
 	/></noscript>
 	<!-- End Meta Pixel Code -->
+	<script src="https://www.google.com/recaptcha/api.js"></script>
+	<script>
+		function onSubmit(token) {
+		  document.getElementById("contact_form").submit();
+		}
+	  </script>
 </head>
 
 <body> 
@@ -907,7 +913,7 @@
 				<div class="container">
 					<div class="contact_inner">
 						<div class="devman_tm_main_title" data-text-align="left">
-							<span>N'hésitez pas</span>
+							<span>Vous avez un projet ?</span>
 							<h3>Laissez moi un message</h3>
 						</div>
 						<div class="in">
@@ -933,7 +939,8 @@
 											<textarea id="message" name='message' type='text' placeholder="Message" required minlength="1" maxlength="2000"></textarea>
 										</div>
 										<div class="devman_tm_button" data-position="left">
-											<button type="submit" class="submit-btn">
+											<button type="submit" class="submit-btn g-recaptcha" data-sitekey="6LezB5IhAAAAAJrtTGjLnoLSFB080g7vRCtU84km" 
+											data-callback='onSubmit' data-action='submit'>
 												Envoyer le Message
 											</button>											
 											
@@ -1121,6 +1128,7 @@
 <!--[if lt IE 10]> <script type="text/javascript" src="js/ie8.js"></script> <![endif]-->	
 <script src="js/plugins.js"></script>
 <script src="js/init.js"></script>
+
 <!-- /SCRIPTS -->
 
 </body>
