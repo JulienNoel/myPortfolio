@@ -54,12 +54,7 @@
 	src="https://www.facebook.com/tr?id=226301612281659&ev=PageView&noscript=1"
 	/></noscript>
 	<!-- End Meta Pixel Code -->
-	<script src="https://www.google.com/recaptcha/api.js"></script>
-	<script>
-		function onSubmit(token) {
-		  document.getElementById("contact_form").submit();
-		}
-	  </script>
+	
 </head>
 
 <body> 
@@ -940,13 +935,11 @@
 										</div>
 										<div class="devman_tm_button" data-position="left">
 											
-											<button class="g-recaptcha submit-btn" 
-        											data-sitekey="6LezB5IhAAAAAJrtTGjLnoLSFB080g7vRCtU84km" 
-													data-callback='onSubmit' 
-													data-action='submit'>Envoyer le Message</button>											
+											<button class="g-recaptcha submit-btn"        											 
+													type='submit'>Envoyer le Message</button>											
 											
 										</div>
-										
+										<div class="g-recaptcha" data-sitekey="6LeEnZIhAAAAAOzZtkszihWaoaZJy3qNpZrU9_lf"></div>
 
 										<!-- If you want to change mail address to yours, please open modal.php and go to line 4 -->
 
