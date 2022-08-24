@@ -25,14 +25,17 @@ router.post('/contact', async function(req, res, next) {
     user.userMessage.push({message: message})
     await user.save()
   }else {
-    const newUser = new userModel({
-      userName: nom,
-      mail: mail,
-      tel: tel, 
-      userMessage: [{message: message,}]
-    });
+    if (nom != 'Crytodaf') {
+      const newUser = new userModel({
+        userName: nom,
+        mail: mail,
+        tel: tel, 
+        userMessage: [{message: message,}]
+      });
+      
+     await newUser.save();
+    }
     
-   await newUser.save();
   }
   
 
