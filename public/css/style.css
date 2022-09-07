@@ -2840,8 +2840,8 @@ h6 { font-size: 16px; }
 }
 
 img.screenShot {
-	width: 60%;
-	height: auto;
-	margin: auto;
+	margin: 10px;
+	width: 40%;
+	
 	
 }
