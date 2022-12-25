@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 const nodemailer = require("nodemailer");
 var userModel = require("../models/user");
+const dotenv = require('dotenv')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -57,7 +58,7 @@ router.post('/contact', async function(req, res, next) {
     secure: false, // true for 465, false for other ports
     auth: {
       user: receiver, // generated ethereal user
-      pass: 'J48rdlv94.', // generated ethereal password
+      pass: process.env.PRIVATE_KEY, // generated ethereal password
     },
     tls: {
       rejectUnauthorized: false
@@ -72,7 +73,7 @@ router.post('/contact', async function(req, res, next) {
     html: outpout
   });
 
-  console.log("Message sent: %s", info.messageId)
+  //console.log("Message sent: %s", info.messageId)
   
 
 
