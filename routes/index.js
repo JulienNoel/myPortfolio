@@ -6,7 +6,7 @@ const dotenv = require('dotenv')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Julien Noel Portfolio' });
+  res.render('index', { title: 'Julien Noel Portfolio Javascript' });
 });
 
 router.post('/contact', async function(req, res, next) {
